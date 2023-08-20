@@ -3,15 +3,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { ButtonModule } from 'primeng/button';
-import { BrowserAnimationsModule }
-  from "@angular/platform-browser/animations";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { TableModule } from 'primeng/table';
 import { PaginatorModule } from 'primeng/paginator';
 import { DialogModule } from 'primeng/dialog';
 import { SidebarModule } from "primeng/sidebar";
 import { InputTextModule } from 'primeng/inputtext';
 import { MenubarModule } from 'primeng/menubar';
-import { MenuItem } from 'primeng/api';
+import { DropdownModule } from 'primeng/dropdown';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,7 +40,7 @@ import { TaskComponent } from './task/task.component';
     ReactiveFormsModule,
     InputTextModule,
     MenubarModule,
-    // MenuItem
+    DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]

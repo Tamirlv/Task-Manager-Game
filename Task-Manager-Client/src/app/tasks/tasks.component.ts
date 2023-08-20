@@ -24,6 +24,7 @@ export class TasksComponent implements OnInit {
   editting: boolean = false // true if in editting mode
   taskEditId: number = 0; // Current task editting
   today: Date = new Date();
+  difficultyLevels = ['Easy', 'Moderate', 'Hard'];
 
   constructor(
     private httpService: HttpService,

@@ -46,37 +46,31 @@
 
     <!-- form dialog (when creating / editting task) -->
 
-    <p-dialog header="Header" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false"
+    <p-dialog header="Add New Task" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false"
         [resizable]="false">
         <form [formGroup]="newTaskForm" (ngSubmit)="onSubmit()">
-            <div class="row">
-                <div class="col">
-                    <i class="pi pi-search"></i>
-                    <label>Title:</label>
-                    <input pInputText type="text" formControlName="title" />
-                </div>
+            <div class="mb-3">
+                <label class="form-label">Title:</label>
+                <input pInputText class="form-control" type="text" formControlName="title" />
             </div>
-            <div class="row">
-                <div class="col">
-                    <label>difficultyLevel:</label>
-                    <input pInputText type="text" formControlName="difficultyLevel" />
-                </div>
+            <div class="mb-3">
+                <label class="form-label">Difficulty Level:</label>
+                <p-dropdown autoWidth="false" [options]="difficultyLevels" class="form-control"
+                    formControlName="difficultyLevel" [style]="{'width':'100%'}"></p-dropdown>
             </div>
-            <div class="row">
-                <div class="col">
-                    <label>pointValue:</label>
-                    <input pInputText type="number" min="0" formControlName="pointValue" />
-                </div>
+            <div class="mb-3">
+                <label class="form-label">Point Value:</label>
+                <input pInputText class="form-control" type="number" min="0" formControlName="pointValue" />
             </div>
-            <div class="row">
-                <div class="col">
-                    <label>dueDate:</label>
-                    <input pInputText type="date" min="{{ today | date: 'yyyy-MM-dd' }}" formControlName="dueDate" />
-                </div>
+            <div class="mb-3">
+                <label class="form-label">Due Date:</label>
+                <input pInputText class="form-control" type="date" [min]="today | date: 'yyyy-MM-dd'"
+                    formControlName="dueDate" />
             </div>
-
-            <button [disabled]="!newTaskForm.valid" class="btn btn-success" type="submit">Submit</button>
-            <button (click)="onCancel()" class="btn btn-danger" type="button">Cancel</button>
+            <div class="d-flex justify-content-between mt- mx-2">
+                <button [disabled]="!newTaskForm.valid" class="btn btn-success" type="submit">Submit</button>
+                <button (click)="onCancel()" class="btn btn-danger" type="button">Cancel</button>
+            </div>
         </form>
     </p-dialog>
 </div>
