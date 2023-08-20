@@ -1,0 +1,7 @@
+<div class="task" [ngStyle]="task.completed ? {'background-color': '#f5f5f5'} : {'background-color': '#7BFD5A'}">
+  <h3>{{ task.title }}</h3>
+  <p>Point Value: {{ task.pointValue }}</p>
+  <p>Difficulty Level: {{ task.difficultyLevel }}</p>
+  <p>Due Date: {{ task.dueDate | date:'short' }}</p>
+  <button [disabled]="task.completed" (click)="completeTask()">{{task.completed ? 'Task Completed' : 'Complete'}}</button>
+</div>
