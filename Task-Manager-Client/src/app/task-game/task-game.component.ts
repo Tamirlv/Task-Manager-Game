@@ -20,11 +20,13 @@ export class TaskGameComponent implements OnInit {
   ) { }
   ngOnInit(): void {
     this.httpService.getAllTasks().subscribe((tasks: any) => {
+      // Getting all tasks
       this.tasks = tasks;
       this.sortTasks();
-      this.totalRecords = this.tasks.length;
+      this.totalRecords = this.tasks.length; // Records length for paginator
     })
     this.httpService.getUserData().subscribe((data: any) => {
+      // Gets user level and score
       this.playerLevel = data.level;
       this.playerScore = data.score;
     });

@@ -18,18 +18,18 @@ export interface Task {
 })
 export class TasksComponent implements OnInit {
   tasks: any = []; // Tasks array
-  displayTasks: Task[] = [];
-  visible: boolean = false; // New/Edit task visible
+  visible: boolean = false; // New / Edit task dialog visible
   newTaskForm: FormGroup; // Form of new task
   editting: boolean = false // true if in editting mode
-  taskEditId: number = 0; // Current task editting
-  today: Date = new Date();
+  taskEditId: number = 0; // Current id of the task i edit
+  today: Date = new Date(); // Date of today (for date input in form)
   difficultyLevels = ['Easy', 'Moderate', 'Hard'];
 
   constructor(
     private httpService: HttpService,
     private formBuilder: FormBuilder
   ) {
+    // Creating the form
     this.newTaskForm = this.formBuilder.group({
       title: ['', Validators.required],
       difficultyLevel: ['', [Validators.required]],
@@ -45,13 +45,15 @@ export class TasksComponent implements OnInit {
   getAllTasks() {
     // Getting all tasks from server and setting the tasks array
     this.httpService.getAllTasks().subscribe((data: any) => {
-      this.tasks = data;
+      if (data) {
+        this.tasks = data;
+      }
     });
   }
 
 
   deleteTask(taskId: number) {
-    // Deletes a task from by the taskId
+    // Deletes a task by the taskId
     this.httpService.deleteTask(taskId).subscribe((data: any) => {
       if (data) {
         this.getAllTasks();

@@ -6,12 +6,11 @@ import { TaskService } from 'src/services/tasks.service';
 export class UserController {
     constructor(
         private readonly tasksService: TaskService
-    ) {
+    ) { }
 
-    }
     @Get()
-
     getTasks(): User {
+        // Get user data
         const user = this.tasksService.getUser();
         return user;
     }

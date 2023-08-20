@@ -10,22 +10,22 @@ export class TasksController {
 
     @Post()
     createTask(@Body() task: Task) {
-
-        // TODO validation
-
-
-        return this.tasksService.createTask(task);
+        // Validate that all required fields exist
+        if (task.completed && task.difficultyLevel && task.dueDate && task.pointValue && task.title) {
+            return this.tasksService.createTask(task);
+        }
     }
 
     @Get()
     getTasks(): Task[] {
+        // Getting all tasks
         const tasks = this.tasksService.getAllTasks();
         return tasks;
     }
 
     @Delete('/:id')
-
     deleteTask(@Param('id') id: string) {
+        // Deletes the task by task id
         const deleted = this.tasksService.deleteTask(id);
         if (deleted) {
             return {
@@ -37,19 +37,18 @@ export class TasksController {
 
     @Put()
     updateTask(@Body() task: Task): { message: any } {
-        const updated = this.tasksService.updateTask(task)
-        return { message: updated };
+        // Validate that all required fields exist
+        if (task.difficultyLevel && task.dueDate && task.pointValue && task.title && task.id) {
+            const updated = this.tasksService.updateTask(task)
+            return { message: updated };
+        }
     }
 
     @Post('/complete/:id')
     completeTask(@Param('id') id: string) {
+        // Complte a task and getting new user score and level
         const user = this.tasksService.completeTask(id);
         return user;
-        // // if (completedTask) {
-        // return {
-        //     message: completedTask
-        // }
-        // // };
     }
 
 }
