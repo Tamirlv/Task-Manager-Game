@@ -23,7 +23,7 @@ export class TasksComponent implements OnInit {
   editting: boolean = false // true if in editting mode
   taskEditId: number = 0; // Current id of the task i edit
   today: Date = new Date(); // Date of today (for date input in form)
-  difficultyLevels = ['Easy', 'Moderate', 'Hard'];
+  difficultyLevels = ['Easy', 'Moderate', 'Hard']; // Levels of tasks
 
   constructor(
     private httpService: HttpService,
@@ -32,7 +32,7 @@ export class TasksComponent implements OnInit {
     // Creating the form
     this.newTaskForm = this.formBuilder.group({
       title: ['', Validators.required],
-      difficultyLevel: ['', [Validators.required]],
+      difficultyLevel: ['Easy', [Validators.required]],
       pointValue: ['', [Validators.required]],
       dueDate: ['', [Validators.required]],
     });

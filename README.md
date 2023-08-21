@@ -1,6 +1,8 @@
 # Task-Manager-Game 
 Welcome to the Task Manager Game! This application allows users to manage tasks and track their progress.
 
+Server Side:
+
 Installation:
 1. cd Task-Manager-Server
 2. npm install
@@ -8,8 +10,15 @@ Installation:
 Running: 
 1. npm run start:dev
 
-Connecting: 
-1. Enter http://localhost:3000 
+Client Side:
+1. cd Task-Manager-Client
+2. npm install
+
+Running:
+1. ng serve
+
+Connecting:
+1. Enter http://localhost:3000
 
 Playing: 
 In the application you have 2 main screens:
