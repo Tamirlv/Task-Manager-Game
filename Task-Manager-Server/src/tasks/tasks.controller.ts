@@ -11,7 +11,7 @@ export class TasksController {
     @Post()
     createTask(@Body() task: Task) {
         // Validate that all required fields exist
-        if (task.completed && task.difficultyLevel && task.dueDate && task.pointValue && task.title) {
+        if (task.difficultyLevel && task.dueDate && task.pointValue && task.title) {
             return this.tasksService.createTask(task);
         }
     }

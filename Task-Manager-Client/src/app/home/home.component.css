@@ -29,6 +29,8 @@ body {
     font-size: 1.2rem;
     cursor: pointer;
     border-radius: 5px;
+    width: 190px;
+    margin-right: 10px;
   }
   .cta-button:hover {
     background-color: #e57500;
