@@ -13,5 +13,5 @@ Connecting:
 
 Playing: 
 In the game you have 2 main screens:
-1. Tasks Component - Manage tasks (add, delete and update).
+1. Tasks Component - Manage tasks (add, delete and update tasks).
 2. Game Component - Play the game, reach highest score and level up.
