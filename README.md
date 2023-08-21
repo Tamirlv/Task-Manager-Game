@@ -20,7 +20,7 @@ Running:
 1. ng serve
 
 Connecting:
-1. Enter http://localhost:3000
+1. Enter http://localhost:4200
 
 Playing: 
 In the application you have 2 main screens:
