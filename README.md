@@ -11,6 +11,8 @@ Running:
 1. npm run start:dev
 
 Client Side:
+
+Installation:
 1. cd Task-Manager-Client
 2. npm install
 
