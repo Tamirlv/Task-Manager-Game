@@ -20,7 +20,7 @@ export class TasksController {
     getTasks(): Task[] {
         // Getting all tasks
         const tasks = this.tasksService.getAllTasks();
-        return tasks;
+        return tasks.reverse();
     }
 
     @Delete('/:id')
