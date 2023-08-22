@@ -8,7 +8,7 @@ Installation:
 2. npm install
 
 Running: 
-1. npm run start:dev
+1. npm run start
 
 Client Side:
 
